@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя учёба — Портфолио</title>
+    <style>
+        /* Общие настройки страницы */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto 40px auto;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Список успеваемости */
+        .study-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .study-list li {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 20px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .study-list li span {
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.4rem;
+        }
+
+        /* Галерея */
+        .study-gallery {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .study-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .study-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* --- СТИЛИ ДЛЯ КНОПКИ ВОЗВРАТА --- */
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #4CAF50; /* Зеленая кнопка */
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .back-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Модальное окно для увеличения */
+        dialog {
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 90vw;
+        }
+        dialog::backdrop {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        #modalImage {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="btn-container" style="text-align: left;">
+        <a href="Portfolio.html" class="back-btn">← В основное меню</a>
+    </div>
+
+    <section class="section">
+        <h2>Моя учёба</h2>
+
+        <ul class="study-list">
+            <li>Средний балл по всем предметам <span>4.63</span></li>
+            <li>Место в рейтинге класса <span>4</span></li>
+            <li>Статус успеваемости <span>Стабильный</span></li>
+        </ul>
+
+        <div class="study-gallery">
+            <div class="study-card" onclick="document.getElementById('imgModal').showModal()">
+                <img src="рейтинг.png" alt="Скриншот рейтинга ЭЖД">
+                <p><strong>Общий рейтинг в системе ЭЖД</strong><br><span style="font-size: 0.9em; color: #666;">(нажмите, чтобы увеличить)</span></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="btn-container">
+        <a href="Portfolio.html" class="back-btn">← В основное меню</a>
+    </div>
+</div>
+
+<dialog id="imgModal" onclick="this.close()">
+    <img src="рейтинг.png" alt="Рейтинг крупно" id="modalImage">
+    <p style="text-align:center; font-weight:bold; margin-top:10px;">Нажмите в любое место, чтобы закрыть</p>
+</dialog>
+
+</body>
+</html>

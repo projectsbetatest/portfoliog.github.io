@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои достижения</title>
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements li {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 20px 25px;
+            border-left: 5px solid #667eea;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            color: #495057;
+        }
+
+        .achievements li:hover {
+            transform: translateX(10px);
+            background: #e9ecef;
+            border-left-color: #764ba2;
+        }
+
+        /* Убираем синее подчеркивание у ссылок */
+        .achievements li a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- СТИЛИ ДЛЯ КНОПКИ ВОЗВРАТА --- */
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .back-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* --- СТИЛИ ДЛЯ УВЕЛИЧЕНИЯ ФОТО --- */
+        .clickable-img {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .clickable-img:hover {
+            transform: scale(1.05); /* Легкое увеличение при наведении */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+        }
+
+        dialog {
+            border: none;
+            border-radius: 15px;
+            padding: 0;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: transparent;
+            overflow: visible;
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #modalImage {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 35px;
+            height: 35px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: #5a6fd8;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 25px;
+                margin: 20px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .achievements li {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="Portfolio.html" class="back-btn">← В основное меню</a>
+
+        <section id="achievements" class="section achievements">
+            <h2>Мои достижения</h2>
+            <ul>
+                <li><a href="#about">Победитель школьного этапа ВсОШ в городе Москве по Математике 10 класс, 2025/26</a></li>
+                <li><a href="#bb">Призёр муниципального этапа ВсОШ в городе Москве по Информатике 10 класс, 2025/26</a></li>
+                <li><a href="#t">Призёр школьного этапа ВсОШ в городе Москве по Информатике 10 класс, 2025/26</a></li>
+                <li><a href="#t2">Победитель школьного этапа ВсОШ в городе Москве по Праву 10 класс, 2025/26</a></li>
+                <li><a href="#t3">Победитель школьного этапа ВсОШ в городе Москве по Физике 10 класс, 2025/26</a></li>
+            </ul>
+        </section>
+    </div>
+
+   <main>
+    <section id="about" class="section about">
+        <div class="content" style="display: flex; align-items: center; gap: 30px;">
+            <img class="clickable-img" onclick="openModal(this)" src="Математика.png" alt="Грамота" width="200" height="auto" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 1.1rem; line-height: 1.5; color: #333;">Победитель школьного этапа ВсОШ по математике</p>
+        </div>
+    </section>
+
+    <section id="bb" class="section about">
+        <div class="content" style="display: flex; align-items: center; gap: 30px;">
+            <img class="clickable-img" onclick="openModal(this)" src="Информатика Муницип.png" alt="Грамота" width="200" height="auto" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 1.1rem; line-height: 1.5; color: #333;">Призёр муниципального этапа ВсОШ по информатике</p>
+        </div>
+    </section>
+
+    <section id="t" class="section about">
+        <div class="content" style="display: flex; align-items: center; gap: 30px;">
+            <img class="clickable-img" onclick="openModal(this)" src="Информатика.png" alt="Грамота" width="200" height="auto" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 1.1rem; line-height: 1.5; color: #333;">Призёр школьного этапа ВсОШ по информатике</p>
+        </div>
+    </section>
+
+    <section id="t2" class="section about">
+        <div class="content" style="display: flex; align-items: center; gap: 30px;">
+            <img class="clickable-img" onclick="openModal(this)" src="Право.png" alt="Грамота" width="200" height="auto" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 1.1rem; line-height: 1.5; color: #333;">Победитель школьного этапа ВсОШ по праву</p>
+        </div>
+    </section>
+
+    <section id="t3" class="section about">
+        <div class="content" style="display: flex; align-items: center; gap: 30px;">
+            <img class="clickable-img" onclick="openModal(this)" src="Физика.png" alt="Грамота" width="200" height="auto" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <p style="margin: 0; font-size: 1.1rem; line-height: 1.5; color: #333;">Победитель школьного этапа ВсОШ по физике</p>
+        </div>
+    </section>
+
+</main>
+
+<dialog id="imgModal" onclick="if(event.target === this) this.close()">
+    <div class="modal-content">
+        <button class="close-modal" onclick="document.getElementById('imgModal').close()">×</button>
+        <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+</dialog>
+
+<script>
+    function openModal(imgElement) {
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImage');
+
+        // Передаем ссылку на картинку в большое окно
+        modalImg.src = imgElement.src;
+
+        // Открываем окно
+        modal.showModal();
+    }
+</script>
+
+</body>
+</html>
